@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Oculus | About</title>
+    <style>
+        .card {
+            transition: box-shadow .3s;
+            width: 300px;
+            margin: 50px;
+            border-radius: 10px;
+            border: 1px solid;
+            background: rgb(51, 48, 48);
+            float: left;
+        }
+        
+        .card:hover {
+            box-shadow: 0 0 11px rgba(255, 255, 255, 0.9);
+        }
+        
+        .jumbotron {
+            background: none
+        }
+        
+        .white-color {
+            color: white;
+        }
+        
+        .inside-card {
+            color: white;
+        }
+        
+        .orang {
+            background-color: #FD6A02;
+            height: 500px;
+        }
+        
+        .waveimg {
+            position: absolute;
+            z-index: -1;
+            margin-top: -130px;
+        }
+        
+        .element {
+            background-image: url(https://bitbucket-marketing-cdn.atlassian.com/dam/jcr:cd01b96d-381e-49ab-a487-c7d1df92cf59/atlassian%20wave%20adg30524.svg?cdnVersion=jh);
+            background-position: center bottom;
+            background-size: 1440px 126px;
+            background-repeat: repeat-x;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(39, 38, 38);">
+
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="{{ url_for('home') }}" style="color: white;">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="" srcset="" width="100px">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ url_for('about') }}" style="color: white;">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('test') }}" style="color: white;">Take Test</a>
+                </li>
+                <li class="nav-item">
+                    <!-- <a class="nav-link" href="#" style="color: white;">Link</a> -->
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+
+
+
+
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-3 text-center white-color">What is <b style="color: #FD6A02;">OCULUS</b>?</h1><br>
+            <p class="lead white-color" style="text-align: center;">Helping the 'special ones' using the power of machine learning to detect ADHD,Autism and Emotion.The project aims early detection of 'Autism' and 'ADHD' through a web platform fueled by machine learning. It uses a standard computer webcam
+                to screen a children while he/she sees photograph/s or reads a passage on the screen.</p>
+
+        </div>
+    </div>
+
+
+    <center><img src="{{url_for('static', filename='eyetrans.png')}}" width="300px" style="margin-top: -50px;" /></center>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-5 text-center white-color" style="color: #FD6A02;">DETECTION</h1>
+            <p>
+                <div class="card-deck">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body inside-card">
+                            <h5 class="card-title">ADHD</h5>
+
+                            <p class="card-text">
+                                A chronic condition including attention difficulty, hyperactivity and impulsiveness.
+
+                            </p>
+                            <a href="{{ url_for('adhd')}}" class="card-link">Take Test</a>
+
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body inside-card">
+                            <h5 class="card-title">AUTISM</h5>
+
+                            <p class="card-text">A learning disorder characterised by difficulty reading.
+
+                            </p>
+                            <a href="{{ url_for('autism')}}" class="card-link">Take Test</a>
+
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body inside-card">
+                            <h5 class="card-title">Emotion</h5>
+
+                            <p class="card-text">A Real-Time Emotion Detection.
+
+                            </p>
+                            <a href="{{ url_for('emotion')}}" class="card-link">Take Test</a>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </p>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-5 text-center white-color" style="color: #FD6A02;">APPROACH</h1><br>
+            <p class="lead white-color" style="text-align: center;">
+                The project detects the child's pupil movement across the screen, hence giving a hint about his/her early symptoms of Autism & ADHD. It does this by plotting a graph based on the co-ordinates of the pupil recorded according to the viewport. <br>These
+                points are then fed into a machine learning model trained to classify these patterns and thus showing the results as positive or negative against the opted test.
+            </p>
+
+        </div>
+    </div>
+
+
+    <div class="jumbotron jumbotron-fluid usecase">
+        <div class="container">
+            <h1 class="display-5 text-center white-color" style="color: #FD6A02;">USE CASES</h1><br>
+            <p class="lead white-color" style="text-align: center;">
+                Can be extended to/for:
+                <ul class="white-color" style="text-align: center; list-style: none;">
+                    <li>
+                        <h3>
+                            Schools
+                        </h3>
+                    </li>
+                    <li>
+                        <h3>
+                            Pediatrician
+                        </h3>
+                    </li>
+                    <li>
+                        <h3>
+                            Self Diagnosis
+                        </h3>
+                    </li>
+                </ul>
+            </p>
+
+        </div>
+    </div>
+    <center>
+        <div class="white-color">Made by Afsal, Basim, Safreen & Zameel.
+        </div>
+
+    </center>
+
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1440 126" style="enable-background:new 0 0 1440 126;" xml:space="preserve">
+    <style type="text/css">
+        .st0 {
+            fill: #FD6A02;
+        }
+    </style>
+    <path class="st0" d="M685.6,38.8C418.7-11.1,170.2,9.9,0,30v96h1440V30C1252.7,52.2,1010,99.4,685.6,38.8z" />
+</svg>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

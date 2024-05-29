@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Oculus | Test</title>
+
+    <style>
+        .card {
+            background-color: rgb(39, 38, 38);
+            transition-delay: 2s ease;
+            color: white;
+            border: 1px solid #FD6A02;
+            height: 4rem;
+        }
+        
+        .card:hover {
+            -webkit-box-shadow: -1px 0px 17px 4px rgba(253, 106, 2, 1);
+            -moz-box-shadow: -1px 0px 17px 4px rgba(253, 106, 2, 1);
+            box-shadow: -1px 0px 17px 4px rgba(253, 106, 2, 1);
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(39, 38, 38);">
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="{{ url_for('home') }}" style="color: white;">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="" srcset="" width="100px">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ url_for('about') }}" style="color: white;">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('test') }}" style="color: white;">Take Test</a>
+                </li>
+                <li class="nav-item">
+                    <!-- <a class="nav-link" href="#" style="color: white;">Link</a> -->
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+
+    <!-- instructions -->
+    <div class="jumbotron jumbotron-fluid" style="background-color: transparent;">
+        <center>
+            <h1 class="display-1" style="color: white;">
+                <h3 style="color: #FD6A02;">INSTRUCTIONS</h3>
+                <p style="color: white;">(This page is playing Audio)</p>
+                <audio controls autoplay>
+                <source src="{{url_for('static', filename='instruction.mp3')}}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+                <hr class="my-4" style="background-color: white; width: 40%" />
+        </center>
+    </div>
+
+    <center>
+        <div class="container" style="color: azure;">
+            <p>
+                1. This page is playing audio. Kindly keep the volume 🔊 turned on.<br><br> 2. Click on the left tab for <b>'ADHD'</b> Test, middle tab for <b>'AUTISM'</b> Test & right tab for <b>'EMOTION'</b> Test.<br><br> 3. After you click on the tabs
+                you'll be shown a set of running images.
+                <br><br> 4. Click on the START TEST button to begin.<br><br> 5. After you're done with the tests, hit 'SPACEBAR' to stop.<br><br> 6. Observe those images while trying to distinguish between them.
+            </p>
+        </div>
+    </center>
+
+    <!-- card Options -->
+    <div class="card-deck container mx-auto" style="margin-top: 6rem;">
+
+        <div class="card" style="border-radius: 1rem;">
+
+            <center>
+                <div class="card-body mx-auto">
+                    <a href="{{ url_for('adhd') }}" style="text-decoration: none; color: white">
+                        <h5 class="card-title"> ADHD
+                        </h5>
+                    </a>
+                </div>
+            </center>
+        </div>
+
+        <div class="card" style="border-radius: 1rem;">
+
+            <center>
+                <div class="card-body">
+                    <a href="{{ url_for('autism') }}" style="text-decoration: none; color: white">
+                        <h5 class="card-title"> AUTISM
+                        </h5>
+                    </a>
+                </div>
+            </center>
+        </div>
+
+        <div class="card" style="border-radius: 1rem;">
+
+            <center>
+                <div class="card-body">
+                    <a href="{{ url_for('emotion') }}" style="text-decoration: none; color: white">
+                        <h5 class="card-title"> EMOTION
+                        </h5>
+                    </a>
+                </div>
+            </center>
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

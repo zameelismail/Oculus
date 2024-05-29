@@ -1,0 +1,7 @@
+opencv-python
+matplotlib
+fastai==1.0.61
+tensorflow
+Flask
+seaborn
+deepface
